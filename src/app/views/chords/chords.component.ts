@@ -8,6 +8,7 @@ import { CHORDS } from './CHORDS';
 export class ChordsComponent {
   CHORDS = CHORDS;
   selectedChords?: any;
+  selectedChord?: any;
   private shortcuts: any = {
     '1': () => {
       this.tab(1)

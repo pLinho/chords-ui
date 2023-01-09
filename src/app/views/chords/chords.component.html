@@ -3,11 +3,12 @@
         <option *ngFor="let kv of CHORDS | keyvalue"
                 [value]="kv.key">{{kv.key}}</option>
     </select>
-    
-    <select>
+
+    <select [(ngModel)]="selectedChord">
         <option *ngFor="let chord of getChords(); let i = index"
                 [value]="chord"><span style="background: red;">A</span>{{chord}}</option>
     </select>
+    {{selectedChord | json}}
 </nav>
 <div class="finger-board"
      (click)="playChords()">
@@ -33,12 +34,16 @@
         <div class="string"
              (click)="tab(6); $event.stopPropagation()"></div>
     </div>
+
     <div class="fingers">
-        <div class="finger"></div>
-        <div class="finger"></div>
-        <div class="finger"></div>
-        <div class="finger"></div>
-        <div class="finger"></div>
-        <div class="finger"></div>
+        <div class="finger"
+             [style.margin-top]="selectedChord ? (selectedChord.split(',')[0]*120) + 'px' : ''">{{selectedChord ?
+            selectedChord[0]
+            : ''}}</div>
+        <div class="finger" [style.margin-top]="selectedChord ? (selectedChord.split(',')[1]*120) + 'px' : ''">{{selectedChord ? selectedChord.split(',')[1] : ''}}</div>
+        <div class="finger" [style.margin-top]="selectedChord ? (selectedChord.split(',')[2]*120) + 'px' : ''">{{selectedChord ? selectedChord.split(',')[2] : ''}}</div>
+        <div class="finger" [style.margin-top]="selectedChord ? (selectedChord.split(',')[3]*120) + 'px' : ''">{{selectedChord ? selectedChord.split(',')[3] : ''}}</div>
+        <div class="finger" [style.margin-top]="selectedChord ? (selectedChord.split(',')[4]*120) + 'px' : ''">{{selectedChord ? selectedChord.split(',')[4] : ''}}</div>
+        <div class="finger" [style.margin-top]="selectedChord ? (selectedChord.split(',')[5]*120) + 'px' : ''">{{selectedChord ? selectedChord.split(',')[5] : ''}}</div>
     </div>
 </div>

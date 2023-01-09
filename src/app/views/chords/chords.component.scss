@@ -87,16 +87,21 @@
             height: 35px;
             background-color: white;
             border-radius: 17.5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
 
 nav {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
     height: 64px;
+    border-radius: 12px;
     display: flex;
     flex-direction: row;
     align-items: center;
