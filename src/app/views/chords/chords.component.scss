@@ -1,0 +1,108 @@
+:host {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-color: black;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.finger-board {
+    position: relative;
+    width: 300px;
+    height: 100vh;
+    background: url(/assets/brown-wooden-flooring.jpg);
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-size: contain;
+    background-color: rgb(129, 30, 30);
+    display: block;
+
+    .nut {
+        pointer-events: none;
+        position: absolute;
+        left: -4px;
+        right: -4px;
+        top: 20px;
+        height: 4px;
+        border-radius: 8px;
+        background-color: white;
+    }
+
+    .strings {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-around;
+
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+
+        .string {
+            width: 5px;
+            height: 100vh;
+            background: linear-gradient(to left, #000000 0%, #fefefe 50%, #000000 100%);
+        }
+    }
+
+    .frets {
+        position: absolute;
+        top: 140px;
+        left: -2px;
+        right: -2px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        pointer-events: none;
+
+        .fret {
+            height: 2px;
+            background: linear-gradient(170deg, #fefefe 0%, #556688 50%, #dae4fa 51%, #556688 100%);
+            margin-bottom: 120px;
+            pointer-events: none;
+        }
+    }
+
+    .fingers {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        top: 65px;
+        left: 10px;
+        right: 10px;
+        justify-content: space-between;
+
+        .finger {
+            width: 35px;
+            height: 35px;
+            background-color: white;
+            border-radius: 17.5px;
+        }
+    }
+}
+
+nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+    background-color: rgba(#556688, .33);
+    backdrop-filter: blur(3px);
+}

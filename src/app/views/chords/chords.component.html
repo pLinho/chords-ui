@@ -1,0 +1,44 @@
+<nav>
+    <select [(ngModel)]="selectedChords">
+        <option *ngFor="let kv of CHORDS | keyvalue"
+                [value]="kv.key">{{kv.key}}</option>
+    </select>
+    
+    <select>
+        <option *ngFor="let chord of getChords(); let i = index"
+                [value]="chord"><span style="background: red;">A</span>{{chord}}</option>
+    </select>
+</nav>
+<div class="finger-board"
+     (click)="playChords()">
+    <div class="frets">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="nut"></div>
+    <div class="strings">
+        <div class="string"
+             (click)="tab(1); $event.stopPropagation()"></div>
+        <div class="string"
+             (click)="tab(2); $event.stopPropagation()"></div>
+        <div class="string"
+             (click)="tab(3); $event.stopPropagation()"></div>
+        <div class="string"
+             (click)="tab(4); $event.stopPropagation()"></div>
+        <div class="string"
+             (click)="tab(5); $event.stopPropagation()"></div>
+        <div class="string"
+             (click)="tab(6); $event.stopPropagation()"></div>
+    </div>
+    <div class="fingers">
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+    </div>
+</div>
